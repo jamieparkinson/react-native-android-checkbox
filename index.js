@@ -15,13 +15,10 @@ class Checkbox extends Component {
     this._checkboxComponent = {};
 
     this._onChange = (event) => {
-      this.props.onChange && this.props.onChange(event);
       this.props.onValueChange && this.props.onValueChange(event.nativeEvent.value);
-
-      this._checkboxComponent.setNativeProps({on: this.props.value});
     }
   }
-  
+
   render() {
     return (
       <View style={this.props.style}>

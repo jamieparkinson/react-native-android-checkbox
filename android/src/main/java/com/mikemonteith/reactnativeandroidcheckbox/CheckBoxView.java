@@ -1,14 +1,16 @@
 package com.mikemonteith.reactnativeandroidcheckbox;
 
-import android.content.Context;
+import com.facebook.react.uimanager.ThemedReactContext;
 import android.widget.CheckBox;
 
 public class CheckBoxView extends CheckBox {
 
     private boolean mAllowChange;
+    private ThemedReactContext mReactContext;
 
-    public CheckBoxView(Context context) {
-        super(context);
+    public CheckBoxView(ThemedReactContext reactContext) {
+        super(reactContext);
+        mReactContext = reactContext;
         mAllowChange = true;
     }
 
@@ -26,5 +28,9 @@ public class CheckBoxView extends CheckBox {
             super.setChecked(on);
         }
         mAllowChange = true;
+    }
+
+    public ThemedReactContext getReactContext() {
+        return mReactContext;
     }
 }

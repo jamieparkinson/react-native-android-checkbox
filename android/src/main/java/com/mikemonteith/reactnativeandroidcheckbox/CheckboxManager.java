@@ -32,9 +32,6 @@ public class CheckboxManager extends SimpleViewManager<CheckBoxView> {
     @Override
     public CheckBoxView createViewInstance(ThemedReactContext context){
         final CheckBoxView checkbox = new CheckBoxView(context);
-
-        checkbox.setOnCheckedChangeListener(checkedListener);
-
         return checkbox;
     }
 
